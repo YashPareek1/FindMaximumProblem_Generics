@@ -1,55 +1,49 @@
 package com;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
 public class FindMaximumTest {
 
-    FindMaximum findMaximum = new FindMaximum();
-    //test case 1.1
-    //returning value at position 1
-    @Test
-    public void given3Integers_whenGiven_ShouldReturnFirstIntegerMax(){
-        Integer findMax = FindMaximum.testMax(10,7,5);
-        Assertions.assertSame( 10,findMax );
-    }
-
-    //test case 1.2
-    //returning value at position 2
-    @Test
-    public void given3Integers_whenGiven_ShouldReturnSecondIntegerMax(){
-        Integer findMax = FindMaximum.testMax(5,10,7);
-        Assertions.assertSame( 10,findMax );
-
-    }
-
-    //test case 1.3
-    //returning value at position 3
-    @Test
-    public void given3Integers_whenGiven_ShouldReturnThirdIntegerMax(){
-        Integer findMax = FindMaximum.testMax(5,7,10);
-        Assertions.assertSame( 10,findMax );
-    }
-    
-  //testing max for float values at position
-    @Test
-    public void given3Float_whenGiven_ShouldReturnFirstFloatMax(){
-        Float findMax = findMaximum.testMax(10.4f,7.2f,5.5f);
-        Assertions.assertEquals( 10.4,findMax ,0.001);
-    }
-
-    @Test
-    public void given3Float_whenGiven_ShouldReturnSecondFloatMax(){
-        Float findMax = findMaximum.testMax(5.5f,10.4f,7.2f);
-        Assertions.assertEquals( 10.4,findMax ,0.001);
-
-    }
-
-    @Test
-    public void given3Float_whenGiven_ShouldReturnThirdFloatMax(){
-        Float findMax = findMaximum.testMax(5.5f,7.2f,10.4f);
-        Assertions.assertEquals( 10.4f,findMax,0.001);
-    }
+	@Test
+	public void testMaximumIntegerAtFirst() {
+		Assert.assertEquals((Integer)8, FindMaximum.testMax(8, 4, 7));	
+	}
+	@Test
+	public void testMaximumIntegerAtSecond() {
+		Assert.assertEquals((Integer)20, FindMaximum.testMax(4, 20, 7));	
+	}
+	@Test
+	public void testMaximumIntegerAtThird() {
+		Assert.assertEquals((Integer)45, FindMaximum.testMax(4, 20, 45));	
+	}
+	
+	@Test
+	public void testMaximumFloatAtFirst() {
+		Assert.assertEquals((Float)4.6f, FindMaximum.testMax(4.6f, 4.5f, 2.6f));	
+	}
+	@Test
+	public void testMaximumFloatAtSecond() {
+		Assert.assertEquals((Float)5.2f, FindMaximum.testMax(4.6f, 5.2f, 1.7f));	
+	}
+	@Test
+	public void testMaximumFloatrAtThird() {
+		Assert.assertEquals((Float)9.9f, FindMaximum.testMax(4.8f, 8.0f, 9.9f));	
+	}
+	
+	@Test
+	public void testMaximumStringAtFirst() {
+		Assert.assertEquals("tiger", FindMaximum.testMax("tiger", "lion", "elephant"));	
+	}
+	@Test
+	public void testMaximumStringAtSecond() {
+		Assert.assertEquals("tiger", FindMaximum.testMax("elephant","tiger", "lion"));	
+	}
+	@Test
+	public void testMaximumStringAtThird() {
+		Assert.assertEquals("tiger", FindMaximum.testMax("lion", "elephant", "tiger"));	
+	}
     
 }

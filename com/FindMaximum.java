@@ -1,6 +1,15 @@
 package com;
 //Finding maximum from given three integers
-public class FindMaximum {
+
+public class FindMaximum <E extends Comparable<E>>{
+		
+		E a, b, c;
+		
+		public FindMaximum(E a, E b, E c) {
+			this.a = a;
+			this.b = b;
+			this.c = c;
+		}
 	
 	public static <E extends Comparable<E>> E testMax(E a, E b, E c) {
 		E max = a;
